@@ -1,7 +1,6 @@
 package org.nathan;
 
 import org.lwjgl.openal.AL10;
-import org.urish.openal.Source;
 
 public class AudioSource {
     private int sourceId;
