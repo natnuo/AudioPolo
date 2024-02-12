@@ -56,7 +56,5 @@ public class AudioListener {
         for (int buffer : buffers) {
             AL10.alDeleteBuffers(buffer);
         }
-        ALC10.alcSuspendContext(context);
-        ALC10.alcCloseDevice(device);
     }
 }

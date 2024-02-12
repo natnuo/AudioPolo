@@ -12,13 +12,13 @@ public class Main {
             if (cmd.equals("b") || cmd.equals("board")) {
                 System.out.println(g);
             } else {
-                g = new Game();
+                g.start();
                 char c = ' ';
                 do {
                     String n = s.nextLine();
                     c=n.length()>0?n.charAt(0):' ';
                 } while (!g.tick(c));
-                g.end();
+                g.stop();
             }
             cmd = s.nextLine();
         }

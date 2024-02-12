@@ -5,16 +5,12 @@ public class Target {
     private double x, y;
     private boolean isMuffled;
     private Board board;
+    private int buffer;
 
-    public Target(String fileName, AudioListener listener, Board board) {
+    public Target(String fileName, AudioListener listener) {
         source = new AudioSource();
-        source.play(listener.getBuffer(fileName));
+        buffer = listener.getBuffer(fileName);
         source.setLooping(true);
-        x=0;
-        y=0;
-        isMuffled = false;
-        this.board = board;
-        setRandomPos();
     }
 
     public void tick(double vx, double vy) {
@@ -34,6 +30,10 @@ public class Target {
         else tick(0, 0);
     }
 
+    public int[] getPos() {
+        return new int[]{(int) x, (int) y};
+    }
+
     public void setMuffled(boolean muffled) {
         if (muffled) {
             source.setPitch(-10f);
@@ -49,7 +49,22 @@ public class Target {
         return isMuffled;
     }
 
+    public void start(Board board) {
+        x=0;
+        y=0;
+        isMuffled = false;
+        this.board = board;
+        setRandomPos();
+        source.play(buffer);
+    }
+
+    public void stop() {
+        source.stop();
+    }
+
     public void end() {
+//        System.out.println("LOG: TARGET SOURCE DELETING");
+        source.stop();
         source.delete();
     }
 }
