@@ -55,4 +55,4 @@ x x x x x x x x
 All other chars mean the same as in outside of game. Note that in-game board displays will not show where the player has travelled to already ('```•```')
 
 ## Installation:
-Check "releases" tab.
+Check the "releases" tab.
