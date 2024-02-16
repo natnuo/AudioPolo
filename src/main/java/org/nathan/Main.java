@@ -3,11 +3,27 @@ package org.nathan;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Runs functions relating to the Marco Polo Audio Game.
+ * @author (Nathan Tao)
+ * @version (2/16/2024)
+ */
 public class Main {
+    /**
+     * Runs the program loop, reads from standard input and prints to standard output
+     * COMMANDS:
+     * -- OUTSIDE OF GAME --
+     * q: quit (end program)
+     * b: print last game board
+     * [else]: start game
+     * -- IN GAME --
+     * {w/a/s/d} + enter: move character
+     * b: show board
+     */
     private static void repl() {
         String cmd = "";
         Scanner s = new Scanner(System.in);
-        Game g = new Game();
+        Game g = new Game(8, 8, 0.1);
         while (!cmd.equals("q") && !cmd.equals("quit")) {
             if (cmd.equals("b") || cmd.equals("board")) {
                 System.out.println(g);
@@ -22,6 +38,7 @@ public class Main {
             }
             cmd = s.nextLine();
         }
+        g.end();
     }
 
     public static void main(String[] args) {

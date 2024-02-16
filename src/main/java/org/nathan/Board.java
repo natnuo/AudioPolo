@@ -3,6 +3,11 @@ package org.nathan;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Contains functionality for a board containing walls and display.
+ * @author (Nathan Tao)
+ * @version (2/16/2024)
+ */
 public class Board {
     private char[][] board;
 
@@ -10,10 +15,11 @@ public class Board {
     public final int NUM_COLS;
 
     /**
-     * precondition: (rows-2)*(cols-2)>=1+(number of targets)
-     * @param rows
-     * @param cols
-     * @param wallDensity
+     * Creates and generates the walls of a new Board instance.
+     * precondition: (rows-2)*(cols-2)>=1+(number of targets).
+     * @param rows an int representing the number of rows in this Board.
+     * @param cols an int representing the number of columns in this Board.
+     * @param wallDensity an int representing the targeted density of walls in this Board instance, from 0-0.8. 0 means (except for the borders) the targeted amount of walls in this Board is 0% of the tiles. 0.8 means (except for the borders) the targeted (but not guaranteed) amount of walls in this Board is 80% of the tiles.
      */
     public Board(int rows, int cols, double wallDensity) {
         board = generate(rows, cols, wallDensity);
@@ -76,14 +82,27 @@ public class Board {
         return context;
     }
 
+    /**
+     * Returns the char at a certain position in this Board.
+     * @param x the x position of the point to get.
+     * @param y the y position of the point to get.
+     * @returns the char at the position represented by x and y in this Board.
+     */
     public char getPos(double x, double y) {
         return board[(int)(board.length-y-1)][(int)x];
     }
 
+    /**
+     * Sets a certain position in this Board to a given value.
+     * @param x an int representing the x position of the point to set.
+     * @param y an int representing the y position of the point to set.
+     * @param v a char representing the new value of the point on this Board represented by x and y.
+     */
     public void setPos(double x, double y, char v) {
         board[(int)(board.length-y-1)][(int)x]=v;
     }
 
+    @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
         for (char[] row : board) {
