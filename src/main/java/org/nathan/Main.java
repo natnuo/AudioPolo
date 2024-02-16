@@ -13,12 +13,12 @@ public class Main {
      * Runs the program loop, reads from standard input and prints to standard output
      * COMMANDS:
      * -- OUTSIDE OF GAME --
-     * q: quit (end program)
-     * b: print last game board
-     * [else]: start game
+     * q + enter: quit (end program)
+     * b + enter: print last game board
+     * [any other char] + enter: start game
      * -- IN GAME --
      * {w/a/s/d} + enter: move character
-     * b: show board
+     * b + enter: show board
      */
     private static void repl() {
         String cmd = "";
