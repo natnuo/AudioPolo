@@ -14,7 +14,7 @@ public class Game {
     private Target target;
     private AudioListener listener;
     private int turns;
-    private static final String TARGET_AUDIO = "C:\\Users\\natha\\Coding\\Q1_2024\\MarcoPolo\\src\\main\\java\\org\\nathan\\bounce.wav";
+    private static final String TARGET_AUDIO = "src/main/java/org/nathan/bounce.wav";
 
     private int rows;
     private int cols;

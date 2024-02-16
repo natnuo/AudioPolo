@@ -1,0 +1,1 @@
+java -cp target/MarcoPolo-1.0-SNAPSHOT.jar org.nathan.Main

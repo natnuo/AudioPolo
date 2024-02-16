@@ -11,8 +11,8 @@ public class Player {
     private double x, y;
     private final AudioListener listener;
     private Board board;
-    private final static String WALL_EFFECT_PATH = "C:\\Users\\natha\\Coding\\Q1_2024\\MarcoPolo\\src\\main\\java\\org\\nathan\\wall_hit.wav";
-    private final static String WIN_EFFECT_PATH = "C:\\Users\\natha\\Coding\\Q1_2024\\MarcoPolo\\src\\main\\java\\org\\nathan\\win.wav";
+    private final static String WALL_EFFECT_PATH = "src/main/java/org/nathan/wall_hit.wav";
+    private final static String WIN_EFFECT_PATH = "src/main/java/org/nathan/win.wav";
     private HashSet<double[]> visited;
 
     /**
